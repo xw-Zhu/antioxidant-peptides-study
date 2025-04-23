@@ -158,11 +158,9 @@ for peptide_matrice in peptide_matrices:
         xor_bits = np.bitwise_xor.reduce(seq_parts)
         nand_bits = -((and_bits) - 1)
         nor_bits = -((or_bits) - 1)
-        nxor_bits = -((xor_bits) - 1)
-        nots = [-((seq_part) - 1) for seq_part in seq_parts]
-        nots_bits = np.concatenate(nots, axis=0)
+        nxor_bits = -((xor_bits) - 1
         
-        result = np.concatenate((and_bits, or_bits, xor_bits, nand_bits, nor_bits, nxor_bits, nots_bits))
+        result = np.concatenate((and_bits, or_bits, xor_bits, nand_bits, nor_bits, nxor_bits))
         results.append(result)
     all_results.append(results)
 
